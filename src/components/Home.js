@@ -17,15 +17,15 @@ export default class Home extends Component {
             })
     }
 
-    handleSubmit = (e) => {
-        e.preventDefault()
-    }
+    addNote = () => {
+        
+    }    
 
     render(){
         const notes = this.state.notes.map(note => <Note note={note} />)
         return(
             <div>
-                <NoteForm handleSubmit={this.handleSubmit}/>
+                <NoteForm adNote={this.addNote}/>
                 {notes}
             </div>
         )
