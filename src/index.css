@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.note-form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-between;;
+}
+
+.note-form * {
+  margin-top: 0.5em;
+}

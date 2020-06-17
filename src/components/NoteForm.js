@@ -35,10 +35,20 @@ export default class NoteForm extends Component {
     render(){
         return(
             <form className="note-form" onSubmit={(e) => this.handleSubmit(e)}>
-                <label>From: <input type="text" name="author" value={this.state.author} onChange={this.handleChange} /></label>
-                <label>Location: <input type="text" name="location" value={this.state.location} onChange={this.handleChange} /></label>
-                <label>Note: <input type="text" name="content" value={this.state.content} onChange={this.handleChange} /></label>
-                <input type="submit" value="Send Note" />
+                <div className="input-row">
+                    <label>From:</label><input type="text" name="author" value={this.state.author} onChange={this.handleChange} />
+                </div>
+                <div className="input-row">
+                    <label>Location:</label><input type="text" name="location" value={this.state.location} onChange={this.handleChange} />
+                </div>
+                <div className="input-row">
+                    <label>Note:</label><textarea type="text" 
+                                                  name="content" 
+                                                  value={this.state.content} 
+                                                  onChange={this.handleChange}
+                                                  style={{width: '70%', height: '4em'}} />
+                </div>
+                <input type="submit" value="Send Note" className="btn btn-primary" />
             </form>
         )
     }
