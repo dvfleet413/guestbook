@@ -29,6 +29,7 @@ export default class Home extends Component {
         const notes = this.state.notes.map(note => <Note note={note} />)
         return(
             <div>
+                <h1>Jacqueline T. Stawicki</h1>
                 <NoteForm addNote={this.addNote}/>
                 {notes}
             </div>
