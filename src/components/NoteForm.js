@@ -35,6 +35,7 @@ export default class NoteForm extends Component {
     render(){
         return(
             <form className="note-form" onSubmit={(e) => this.handleSubmit(e)}>
+                <h3>Leave a Note in the Guestbook</h3>
                 <div className="input-row">
                     <label>From:</label><input type="text" name="author" value={this.state.author} onChange={this.handleChange} />
                 </div>
