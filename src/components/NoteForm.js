@@ -26,7 +26,10 @@ export default class NoteForm extends Component {
         }
         fetch("http://localhost:8080/notes", configObj)
             .then(r => r.json())
-            .then(note => console.log(note))
+            .then(note => {
+                this.props.addNote(note)
+            })
+            .catch(e => console.log(e))
     }
 
     render(){

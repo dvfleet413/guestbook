@@ -17,15 +17,19 @@ export default class Home extends Component {
             })
     }
 
-    addNote = () => {
-        
+    addNote = (note) => {
+        this.setState(prevState => {
+            return {
+                notes: [...prevState.notes, note]
+            }
+        })
     }    
 
     render(){
         const notes = this.state.notes.map(note => <Note note={note} />)
         return(
             <div>
-                <NoteForm adNote={this.addNote}/>
+                <NoteForm addNote={this.addNote}/>
                 {notes}
             </div>
         )
