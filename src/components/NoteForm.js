@@ -24,7 +24,7 @@ export default class NoteForm extends Component {
             },
             body: JSON.stringify({note: this.state})
         }
-        fetch("https://stawicki-guestbook-api/notes", configObj)
+        fetch("http://stawicki-guestbook-api.herokuapp.com/notes", configObj)
             .then(r => r.json())
             .then(note => {
                 this.props.addNote(note)
