@@ -8,7 +8,7 @@ export default class Home extends Component {
     }
 
     componentDidMount(){
-        fetch("http://localhost:8080/notes")
+        fetch("https://stawicki-guestbook-api/notes")
             .then(r => r.json())
             .then(notes => {
                 this.setState({
