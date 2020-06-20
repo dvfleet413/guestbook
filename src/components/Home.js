@@ -7,14 +7,24 @@ export default class Home extends Component {
         notes: []
     }
 
+    interval = null;
+
     componentDidMount(){
-        fetch("https://stawicki-guestbook-api.herokuapp.com/notes")
-            .then(r => r.json())
-            .then(notes => {
-                this.setState({
-                    notes: notes
+        const fetchNotes = () => {
+            fetch("https://stawicki-guestbook-api.herokuapp.com/notes")
+                .then(r => r.json())
+                .then(notes => {
+                    this.setState({
+                        notes: notes
+                    })
                 })
-            })
+        }
+
+        this.interval = setInterval(fetchNotes, 5000)
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.interval)
     }
 
     addNote = (note) => {
