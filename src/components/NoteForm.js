@@ -28,6 +28,11 @@ export default class NoteForm extends Component {
             .then(r => r.json())
             .then(note => {
                 this.props.addNote(note)
+                this.setState({
+                    author: '',
+                    location: '',
+                    content: ''
+                })
             })
             .catch(e => console.log(e))
     }
