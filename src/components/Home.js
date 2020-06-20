@@ -8,7 +8,7 @@ export default class Home extends Component {
     }
 
     componentDidMount(){
-        fetch("http://stawicki-guestbook-api.herokuapp.com/notes")
+        fetch("https://stawicki-guestbook-api.herokuapp.com/notes")
             .then(r => r.json())
             .then(notes => {
                 this.setState({
